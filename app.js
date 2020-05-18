@@ -25,7 +25,7 @@ app.use(fileUpload());
 app.use(express.static("built"));
 app.use("/api", apiRouter);
 
-// Download Allsets.json if there's a new one and make the card DB
+// Download Allsets.json (+make the card DB) and download booster rules if there are new ones
 spawn("node", ["scripts/download_allsets.js"], { stdio: "inherit" });
 spawn("node", ["scripts/download_booster_rules.js"], { stdio: "inherit" });
 
