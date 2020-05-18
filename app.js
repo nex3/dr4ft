@@ -29,7 +29,7 @@ app.use("/api", apiRouter);
 spawn("node", ["scripts/download_allsets.js"], { stdio: "inherit" });
 spawn("node", ["scripts/download_booster_rules.js"], { stdio: "inherit" });
 
-// Schedule check of a new sets and new boosterRules every hour
+// Schedule check of new sets and new boosterRules every hour
 schedule.scheduleJob("0 * * * *", () => {
   spawn("node", ["scripts/download_allsets.js"], { stdio: "inherit" });
   spawn("node", ["scripts/download_booster_rules.js"], { stdio: "inherit" });
