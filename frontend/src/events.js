@@ -81,7 +81,7 @@ const events = {
     const isCube = /cube/.test(gamesubtype);
     const date = new Date().toISOString().slice(0, -5).replace(/-/g, "").replace(/:/g, "").replace("T", "_");
     const data = [
-      `Event #: ${gameId}`,
+      `Game ID: ${gameId}`,
       `Time: ${date}`,
       "Players:"
     ];
@@ -93,7 +93,7 @@ const events = {
     Object.values(log).forEach((round, index) => {
       data.push("", `------ ${isCube ? "Cube" : sets.shift()} ------`);
       round.forEach(function (pick, i) {
-        data.push("", `Pack ${index + 1} pick ${i + 1}:`);
+        data.push("", `Pack ${index + 1} Pick ${i + 1}:`);
         pick.forEach((card) => data.push(card));
       });
     });
