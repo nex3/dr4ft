@@ -25,11 +25,13 @@ const ManualCubeInput = () => {
 
   return (
     <Fragment>
-      <div>{`Or copy and paste your cube. One card per line! (${cubeListLength} cards)`}</div>
+      <div>{`Or paste your cube list directly:`}</div>
       <TextArea className="cube-list"
-        placeholder='Cube List'
+        placeholder='Cube List (One card per line!)'
         link='list'
       />
+      {/* for better positioning of the card list count, see https://stackoverflow.com/questions/48948011/align-input-buttons-next-to-textarea-in-css */}
+      <div>{`(${cubeListLength} cards)`}</div>
     </Fragment>
   );
 };
@@ -66,7 +68,7 @@ const CubeCobra = () => {
   return (
     <Fragment >
       <div>
-        Import from <a href="https://cubecobra.com/" target="_blank" rel="noopener noreferrer">CubeCobra</a>. Paste the ID for your cube and then press enter.
+        Import list from <a href="https://cubecobra.com/" target="_blank" rel="noopener noreferrer">CubeCobra</a>. Paste the ID for your cube and then press enter.
       </div>
       <label>
         <input
